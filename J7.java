@@ -1,43 +1,50 @@
-class Bank2
+interface Resizable
 {
-    int getInterestRate()
-    {
-        return 0;
-    }
-}
-class Canara extends Bank2 
+	void resizeWidth(int width);
+	void resizeHeight(int height);
+}           
+class Rectangle implements Resizable
 {
-    int getInterestRate()
-    {
-        return 5;
-    }
-    
+	private int width;
+	private int height;					
+	public Rectangle(int width, int height) 
+        {
+		this.width=width;
+		this.height=height;
+        }		
+	public void resizeWidth(int width)
+        {
+		this.width=width;
+        }				
+	public void resizeHeight(int height) 
+        {
+		this.height=height;
+        }
+        public void display()
+        {
+		System.out.println("Rectangle Width: "+width);
+		System.out.println("Rectangle Height: "+height);
+        }
 }
-class SBI extends Bank2
+  
+
+public class J7 
 {
-    int getInterestRate()
-    {
-        return 6;
-        
-    }
-}
-class SCDCC extends Bank2
-{
-    int getInterestRate()
-    {
-        return 8;
-    }
-}
-public class J7
-{
-    public static void main(String[]args)
-    {
-        Canara bank1=new Canara();
-        SBI bank2=new SBI();
-        SCDCC bank3=new SCDCC();
-        System.out.println("Bank1:"+bank1.getInterestRate()+"%");
-        System.out.println("Bank2:"+bank2.getInterestRate()+"%");
-        System.out.println("Bank3:"+bank3.getInterestRate()+"%");
-        
-    }
-}
+	public static void main(String[] args) 
+        {
+		String title0="Lab 7 program - Resizable Interface";
+		String title1="Develop a Java program to create an interface Resizable with methods resizeWidth(int width) and resizeHeight(int height) that allow an object to be resized.";
+		String title2="Create a class Rectangle that implements the Resizable interface and implements the resize methods.";
+		System.out.println(title0+"\n"+title1+"\n"+title2);
+		
+		Rectangle r1=new Rectangle(5,10);		
+		System.out.println("\nOriginal Rectangle: ");
+		r1.display();				
+		
+		r1.resizeWidth(8);
+		r1.resizeHeight(12);
+		System.out.println("\nResized Rectangle: ");
+		r1.display();
+        }
+}				
+

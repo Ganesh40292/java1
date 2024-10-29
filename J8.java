@@ -1,35 +1,30 @@
-class Human
+class Outer
 {
-    public void job()
+    void display()
     {
-        System.out.println("Working Professional");
+        System.out.println("Outer class display method:");
     }
-}
-class Teacher extends Human
-{
-    public void job()
+    class Inner
     {
-        System.out.println("Teacher");
-    }
-}
-class Doctor extends Human
-{
-    public void job()
-    {
-         System.out.println("Doctor");
+        void display()
+        {
+            System.out.println("Inner class display method");
+            
+        }
     }
 }
 public class J8
 {
-    public static void main(String[]args)
+    public static void main(String[] args)
     {
-        Human Ganesh=new Human();
-        Teacher Gautham=new Teacher();
-        Doctor Deepak=new Doctor();
-        Human Vignesh=new Doctor();
-        Ganesh.job();
-        Gautham.job();
-        Deepak.job();
-        Vignesh.job();
+        String title0="Lab 8 program - Nested class";
+        String title1="Develop a Java program to create an outer class with a function display.";
+        String title2="Create another class inside the outer class named inner with a function called display";
+	String title3="Call the two functions in the main class";
+	System.out.println(title0+"\n"+title1+"\n"+title2+"\n"+title3+"\n");
+	Outer o1=new Outer();
+	o1.display();
+	Outer.Inner i1=o1.new Inner();  
+	i1.display();
     }
 }
