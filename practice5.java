@@ -1,27 +1,27 @@
-package pkg1;
-class MultiThreadingOne extends Thread
-{
-    public void run()
-    {
-        try
-        {
-            System.out.println("Thread "+Thread.currentThread().getId()+" is running");
-        }
-        catch(Exception e)
-        {
-            System.out.println("Exception is caught");
-        }
-    }
-}s
-public class J11
+public class practice5
 {
     public static void main(String[] args)
     {
-        int i;
-        for(i=0;i<8;i++)
+        int i,j;
+        for(i=0;i<=5;i++)
         {
-            MultiThreadingOne mt1=new MultiThreadingOne();
-            mt1.start();
+            System.out.println(i*2+ " ");
+        }
+        System.out.println("");
+        for(i=0;i<=5;i++)
+        {
+            System.out.println(i*2+1+" ");
+        }
+        System.out.println("");
+        for(j=3;j<101;j++)
+        {
+            for(i=0;i<=10;i++)
+            {
+                System.out.println(i*j+" ");
+            }
+            System.out.println();
         }
     }
 }
+            
+            

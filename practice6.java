@@ -1,28 +1,15 @@
-package pkg1;
-class MultiThreadingTwo implements Runnable
-{
-    public void run()
-    {
-        try
-        {
-            System.out.println("Thread "+Thread.currentThread().getId()+"is running");
-        }
-        catch(Exception e)
-                {
-                     System.out.println("Exception is caught");
-                }
-    }
-}
-public class J12
+public class practice6
 {
     public static void main(String[] args)
     {
         int i;
-        for(i=0;i<8;i++)
+        String s1="Ganesh Prasad Nayak";
+        int len1=s1.length();
+        String s2=" ";
+        for(i=0;i<len1;i++)
         {
-            MultiThreadingTwo mt1=new MultiThreadingTwo();
-            Thread t1 = new Thread(mt1);
-            t1.start();
-    }
-}
+            s2=s2+s1.substring(len1-(i+1),len1-i);
+        }
+        System.out.println(s2);
+     }
 }

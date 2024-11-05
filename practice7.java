@@ -1,28 +1,27 @@
-package pkg1;
-class MultiThreadingThree extends Thread
+public class practice7
 {
-    public void run()
+    public static void reverse(String s1)
     {
         int i;
-        for(i=0;i<5;i++)
+        String s2="";
+        int len1=s1.length();
+        for(i=0;i<len1;i++)
         {
-            System.out.println(i);
-            try
-            {
-                Thread.sleep(1000);
-            }
-            catch(InterruptedException e)
-            {
-                
-            }
+            s2=s2+s1.substring(len1-(i+1),len1-i);
+            
         }
+    System.out.println(s2);
     }
-}
-public class J13
-{
     public static void main(String[] args)
     {
-        MultiThreadingThree mt1=new MultiThreadingThree();
-        mt1.start();
-    } 
+        reverse("Ganesh");
+        reverse("Gautham");
+        reverse("Deepak");
+        reverse("Vijeth");
+        reverse("Vignesh");
+    }
 }
+    
+    
+        
+            
